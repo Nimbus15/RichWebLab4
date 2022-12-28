@@ -1,0 +1,28 @@
+.Note {
+    border: 1px solid;
+    text-align: center;
+  }
+  
+.background-color-red {
+background-color: red;
+}
+
+.background-color-blue {
+background-color: blue;
+}
+
+.background-color-purple {
+background-color: purple;
+}
+
+.background-color-green {
+background-color: green;
+}
+
+.background-color-yellow {
+background-color: yellow;
+}
+
+.background-color-orange {
+background-color: orange;
+}

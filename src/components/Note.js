@@ -14,6 +14,7 @@ export default class Note extends React.Component {
 
     this.onEdit = this.onEdit.bind(this);
     this.onSave = this.onSave.bind(this);
+    this.onColourChanged = this.onColourChanged.bind(this);
   }
 
   onEdit() {
@@ -40,6 +41,13 @@ export default class Note extends React.Component {
     });
   }
 
+  onColourChanged() {
+    const color = colors[Math.floor(Math.random() * (colors.length - 0) + 0)];
+    this.setState({
+      background: `background-color-${color}`,
+    });
+  }
+
   render() {
     return (
       <div class={`Note ${this.state.background}`}>
@@ -47,6 +55,9 @@ export default class Note extends React.Component {
         <div>
           {this.state.isEdit && <button onClick={this.onSave}>save</button>}
           {!this.state.isEdit && <button onClick={this.onEdit}>edit</button>}
+          {!this.state.isEdit && (
+            <button onClick={this.onColourChanged}>change background</button>
+          )}
         </div>
         <div>
           {this.state.isEdit && (
