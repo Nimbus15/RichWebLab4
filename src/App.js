@@ -18,12 +18,21 @@ export default class App extends React.Component {
       });
     }
 
+    deleteNote(removedId) {
+      this.setState({
+        notes: this.state.notes.filter((id) => id != removedId),
+      });
+    }
+
 
     renderNodeElement(id) {
       return (
         <div>
           <Note
             id={id}
+            delete={() => {
+              this.deleteNote(id);
+            }}
           />
         </div>
       );
@@ -38,9 +47,12 @@ export default class App extends React.Component {
           </div>
           <div>
             {this.state.notes.map((id) => (
-              <Note
+               <Note
                 id={id}
-              />
+                delete={() => {
+                  this.deleteNote(id);
+                }}
+             />
             ))}
         </div>
       </div>
